@@ -1,0 +1,22 @@
+% %-----------------------------------------------------------------------------
+% %  BIBLIOGRAPHY
+% %-----------------------------------------------------------------------------
+% \chapterimage{img/fsh}
+% \chapter*{Bibliography}
+% \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+% \section*{Books}
+% %\addcontentsline{toc}{section}{Books}
+% \printbibliography[heading=bibempty,type=book]
+% \section*{Articles}
+% %\addcontentsline{toc}{section}{Articles}
+% \printbibliography[heading=bibempty,type=article]
+
+%-------------------------------------------------------------------------------
+%	INDEX
+%-------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
