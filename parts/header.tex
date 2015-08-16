@@ -451,15 +451,15 @@ outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{R}};\end{tikzpicture}} % Orange R
 \fill[color=ocre!10!white,opacity=.2] (1cm,0) rectangle (
   3.5cm, % Mini TOC box width
   -3.5cm % Mini TOC box height
-); 
+);
 
 % Mini TOC text content
 \node[anchor=north west] at (1.1cm,.35cm) {
   \parbox[t][8cm][t]{6.5cm}{
-    \huge\bfseries\flushleft 
+    \huge\bfseries\flushleft
     \printcontents{l}{1}{
     \setcounter{tocdepth}{1} % Mini TOC level depth
-    } 
+    }
   }
 };
 
@@ -469,7 +469,7 @@ rounded corners=20pt,
 fill=ocre!10!white,
 text opacity=1,
 draw=ocre,
-draw opacity=1, 
+draw opacity=1,
 line width=1.5pt,
 fill opacity=.2,
 inner sep=12pt]{
@@ -551,11 +551,11 @@ inner sep=12pt]{
 % Watermark
 % Comment the next section in/out to toggle watermark
 %------------------------------------------------------------------------------
-\usepackage[firstpage]{draftwatermark} % add watermark to first page
-\SetWatermarkText{Internal use only}
-\SetWatermarkScale{0.3}
-\SetWatermarkColor[gray]{0.85}
-% 
+% \usepackage[firstpage]{draftwatermark} % add watermark to first page
+% \SetWatermarkText{Internal use only}
+% \SetWatermarkScale{0.3}
+% \SetWatermarkColor[gray]{0.85}
+%
 % %------------------------------------------------------------------------------
 % % Common headings and text chunks
 % %------------------------------------------------------------------------------
@@ -771,8 +771,8 @@ Management implications and overall assessment current as of {#3}; data current 
 \newcommand{\ovpre}{
 \begin{table}[h]
 \centering
-\caption{Condition-Pressure Summary. Confidence in assessments is expressed 
-through symbols: *** High Confidence, ** Medium Confidence, * Low Confidence in 
+\caption{Condition-Pressure Summary. Confidence in assessments is expressed
+through symbols: *** High Confidence, ** Medium Confidence, * Low Confidence in
 assessment. Assessments based on little or no data are marked as "insufficient".}
 \label{cpr-summary}
 \begin{tabular}{lllll}
@@ -787,43 +787,43 @@ Asset & Condition & Pressure & Trend & Data \\ \hline
 }
 
 \newcommand{\ovrow}[7]{
-{#7} &  
+{#7} &
 \IfEqCase{#1}{%
       {++}{\cellcolor{green} Excellent}%
       {+}{\cellcolor{green!25} Good}%
       {0}{\cellcolor{lightgray!25} Satisfactory}%
       {-}{\cellcolor{yellow!50} Unsatisfactory}%
       {--}{\cellcolor{red!50} Poor}%
-      }[\PackageError{mpa-report}{Yikes, looks like the ovrow macro for #7 had a fanny wobble. 
-      The 1st argument, Condition Status, can only be ++, +, 0, -, or --}{}] 
+      }[\PackageError{mpa-report}{Yikes, looks like the ovrow macro for #7 had a fanny wobble.
+      The 1st argument, Condition Status, can only be ++, +, 0, -, or --}{}]
 \IfEqCase{#2}{%
       {+}{***}%
       {0}{**}%
       {-}{*}%
-      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 2nd argument, 
-      Condition Confidence, can only be +, 0, or -}{}] & 
+      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 2nd argument,
+      Condition Confidence, can only be +, 0, or -}{}] &
 \IfEqCase{#3}{%
       {+}{\cellcolor{green} Low}%
       {0}{\cellcolor{lightgray!25} Moderate}%
       {-}{\cellcolor{yellow!50} High}%
-      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 3rd argument, 
-      Pressure Status, can only be +, 0, or -}{}] 
+      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 3rd argument,
+      Pressure Status, can only be +, 0, or -}{}]
 \IfEqCase{#4}{%
       {+}{***}%
       {0}{**}%
       {-}{*}%
-      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 4th argument, 
-      Pressure Confidence, can only be +, 0, or -}{}] & 
+      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 4th argument,
+      Pressure Confidence, can only be +, 0, or -}{}] &
 \IfEqCase{#5}{%
       {+}{\cellcolor{green} Decreasing}%
       {0}{\cellcolor{lightgray!25} Constant}%
       {-}{\cellcolor{yellow!50} Increasing}%
-      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 5th argument, 
+      }[\PackageError{mpa-report}{Invalid argument used in ovrow macro for #7. The 5th argument,
       Pressure Trend, can only be +, 0, or -}{}] &
 \IfEqCase{#6}{
       {+}{}%
       {-}{Insufficient}%
-      }[\PackageError{mpa-report}{Incorrect argument used in ovrow macro for #7. The 6th argument, 
+      }[\PackageError{mpa-report}{Incorrect argument used in ovrow macro for #7. The 6th argument,
       Data Warning, can only be +, or -! Notably, no 0 is allowed}{}]\\
 }
 
@@ -835,13 +835,13 @@ Asset & Condition & Pressure & Trend & Data \\ \hline
 \ass
 \begin{table}[h]
 \centering
-\caption{Condition-Pressure Summary. Confidence in assessments is expressed 
-through symbols: *** High Confidence, ** Medium Confidence, * Low Confidence in 
+\caption{Condition-Pressure Summary. Confidence in assessments is expressed
+through symbols: *** High Confidence, ** Medium Confidence, * Low Confidence in
 assessment. Assessments based on little or no data are marked as "insufficient".}
 \label{cpr-summary}
 \begin{tabular}{llll}
 \hline
-% Park & Asset & 
+% Park & Asset &
 Year & Condition & Pressure & Data \\ \hline
 }
 
@@ -852,8 +852,8 @@ Year & Condition & Pressure & Data \\ \hline
 }
 
 \newcommand{\assrow}[8]{
-% {#1} & 
-% {#2} & 
+% {#1} &
+% {#2} &
 {#3} &
 \IfEqCase{#4}{%
       {++}{\cellcolor{green} Excellent}%
@@ -861,30 +861,30 @@ Year & Condition & Pressure & Data \\ \hline
       {0}{\cellcolor{lightgray!25} Satisfactory}%
       {-}{\cellcolor{yellow!50} Unsatisfactory}%
       {--}{\cellcolor{red!50} Poor}%
-      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 4th argument, 
-      Condition Status, can only be ++, +, 0, -, or --}{}] 
+      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 4th argument,
+      Condition Status, can only be ++, +, 0, -, or --}{}]
 \IfEqCase{#5}{%
       {+}{***}%
       {0}{**}%
       {-}{*}%
-      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 5th argument, 
-      Condition Confidence, can only be +, 0, or -}{}] & 
+      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 5th argument,
+      Condition Confidence, can only be +, 0, or -}{}] &
 \IfEqCase{#6}{%
       {+}{\cellcolor{green} Low}%
       {0}{\cellcolor{lightgray!25} Moderate}%
       {-}{\cellcolor{yellow!50} High}%
-      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 6th argument, 
-      Pressure Status, can only be +, 0, or -}{}] 
+      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 6th argument,
+      Pressure Status, can only be +, 0, or -}{}]
 \IfEqCase{#7}{%
       {+}{***}%
       {0}{**}%
       {-}{*}%
-      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 7th argument, 
-      Pressure Confidence, can only be +, 0, or -}{}] & 
+      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 7th argument,
+      Pressure Confidence, can only be +, 0, or -}{}] &
 \IfEqCase{#8}{
       {+}{}%
       {-}{Insufficient}%
-      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 8th argument, 
+      }[\PackageError{mpa-report}{Macro assrow, #1 #2 #3: The 8th argument,
       Data Warning, can only be +, or -! Notably, no 0 is allowed}{}]\\
 }
 

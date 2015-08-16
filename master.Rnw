@@ -1,12 +1,7 @@
 \input{parts/header}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
-
+\SweaveOpts{concordance=TRUE} % Compile PDF > PDF opens > Ctrl-click on section opens source file
 \SweaveInput{parts/frontmatter.Rnw}
-
-
-
+\SweaveInput{parts/chapter1.Rnw}
 \SweaveInput{parts/backmatter.Rnw}
-
-
 \end{document}
