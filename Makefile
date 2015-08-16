@@ -3,7 +3,7 @@
 .SUFFIXES: .Rnw .tex .pdf
 .SECONDARY: %.tex
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
-SRC = master.tex
+SRC = master
 PDF = $(SRC:=.pdf)
 
 # Meta-rules: Rnw -> tex; tex -> pdf
@@ -22,13 +22,9 @@ PDF = $(SRC:=.pdf)
 	#-dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$*_print.pdf $*.pdf
 
 # Make targets
-#all: clean $(PDF) clean publish
-all: clean publish
+#all: clean $(PDF) clean
+all: clean $(PDF)
 
-publish:
-	@echo Publishing PDFs to data catalog...
-	python publish.py
-	@echo done!
 
 clean:
 	@echo Deleting temporary files...
@@ -36,20 +32,5 @@ clean:
 	*.ind *.aux *.bcf *.bbl *.out *.toc *.ptc *.run.xml *.pyc *.tex
 	@echo done!
 
-# Dependencies: Re-compile the reports only of one of their asset updates changes
-# More generic: To get from "XX_PARK.Rnw" to "park":
-# echo "99_TEST.Rnw" | cut -d "_" -f 2 | cut -d "." -f 1 | tr '[:upper:]' '[:lower:]'
-# returns "test"
-01_NKMP.pdf: $(wildcard ./assets/*/nkmp-*.Rnw)
-03_LCSMP.pdf: $(wildcard ./assets/*/lcsmp-*.Rnw)
-05_EMBMP.pdf: $(wildcard ./assets/*/embmp-*.Rnw)
-10_RSMP.pdf: $(wildcard ./assets/*/rsmp-*.Rnw)
-20_MBIMPA.pdf: $(wildcard ./assets/*/mbimpa-*.Rnw)
-30_NMP.pdf: $(wildcard ./assets/*/nmp-*.Rnw)
-40_SBMP.pdf: $(wildcard ./assets/*/sbmp-*.Rnw)
-50_JBMP.pdf: $(wildcard ./assets/*/jbmp-*.Rnw)
-60_MMP.pdf: $(wildcard ./assets/*/mmp-*.Rnw)
-70_SEMP.pdf: $(wildcard ./assets/*/semp-*.Rnw)
-80_SIMP.pdf: $(wildcard ./assets/*/simp-*.Rnw)
-85_NCMP.pdf: $(wildcard ./assets/*/ncmp-*.Rnw)
-90_WNIMP.pdf: $(wildcard ./assets/*/wnimp-*.Rnw)
+# Dependencies: Re-compile only if chapters change
+master.pdf: $(wildcard ./parts/*.Rnw)
