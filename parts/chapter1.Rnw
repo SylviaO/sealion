@@ -2,3 +2,23 @@
 Chapter 1 goes here.
 \end{remark}
 
+\begin{table}[ht]
+    \begin{center}
+    \caption{The probability ($P$) of a spot pattern occurring, calculated as: $(1-P)^M + MP(1-P)^{M-1}$ and the corresponding information content ($I$) for a range of population sizes ($M$).}
+    \label{Probability}
+        \begin{tabular}{lrr}
+            \hline
+            Population size & Probability of occurrence & Information content (bits)\\
+            \hline
+            50&$\pm$ 3 $\times$ 10$^{-3}$&> 8.38\\
+            100&$\pm$ 1.49 $\times$ 10$^{-3}$&> 9.39\\
+            500&$\pm$ 2.969 $\times$ 10$^{-4}$&> 11.72\\
+            1,000&$\pm$ 1.4862 $\times$ 10$^{-4}$&> 12.72\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
+% Warnung:
+% \contentsline {table}{\numberline {1.4}{\ignorespaces Sample sizes of photographs from 16 captive Australian sea lions (\textit {Neophoca cinerea}) used for testing matches for photographs taken: 1) during the same day at 90\degree ; 2) during the same day at 70\degree , 90\degree , and 110\degree ; 3) during the same day at 1- and 2-m distances; and 4) during different sessions at 90\degree .}}{13}
