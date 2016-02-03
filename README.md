@@ -15,3 +15,5 @@ Stuff about sea lions
 ### Makefile
 
 * Build > Clean all - remove local temp files.
+
+### Ohhhh jeee, ich hab das alles schon wieder vergessen!!! :-(
